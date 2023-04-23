@@ -26,19 +26,15 @@ public static class ConnectionFactory
     {
         var connectionStringBuilder = new SQLiteConnectionStringBuilder
         {
-            SyncMode = SynchronizationModes.Normal,
             Pooling = true,
             DataSource = connectionOptions.DataSource,
             DefaultTimeout = 30,
-            ReadOnly = false,
-            Password = connectionOptions.Password,
-            DateTimeFormat = SQLiteDateFormats.ISO8601,
-            DateTimeKind = DateTimeKind.Utc,
+            // Password = connectionOptions.Password,
+            // DateTimeKind = DateTimeKind.Utc,
+            // SyncMode = SynchronizationModes.Normal,
+            // JournalMode = SQLiteJournalModeEnum.Delete,  //turn this off for increased performanc
             BaseSchemaName = null,
-            JournalMode = SQLiteJournalModeEnum.Delete,  //turn this off for increased performance
-            DefaultIsolationLevel = (IsolationLevel)0,
-            DefaultDbType = DbType.AnsiString,
-            Flags = SQLiteConnectionFlags.None,
+            // Flags = SQLiteConnectionFlags.None,
         };
 
         return new SqliteConnection(connectionStringBuilder.ConnectionString);

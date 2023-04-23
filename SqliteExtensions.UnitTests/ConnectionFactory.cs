@@ -1,3 +1,6 @@
+using ConnectionFactory;
+using Microsoft.Data.Sqlite;
+
 namespace SqliteExtensions.UnitTests;
 
 [TestClass]
@@ -21,5 +24,26 @@ public class ConnectionFactoryTests
     public void CreateDbAndCreateConnection()
     {
         
+        ConnectionFactory.ConnectionFactory.CreateSqliteInstance("CreateConnectionTest.sqlite");
+
+        var connectionOptions = new ConnectionOptions()
+        {
+            DataSource = "CreateConnectionTest.sqlite",
+            SqliteOpenMode = SqliteOpenMode.ReadWriteCreate
+        };
+        var connection = ConnectionFactory.ConnectionFactory.CreateConnection(connectionOptions);
+        Assert.IsNotNull(connection);
+
+        try
+        {
+            connection.Open();
+            connection.Close();
+        }
+        catch (Exception e)
+        {
+            Assert.Fail($"Could not open database:{e.Message}");
+        }
+        ConnectionFactory.ConnectionFactory.DeleteSqliteInstance("CreateConnectionTest.sqlite");
+
     }
 }
