@@ -1,8 +1,28 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectionFactory", "ConnectionFactory\ConnectionFactory.csproj", "{CAABDF63-B61A-4FCE-86AC-D43AA862AD42}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqliteExtensions.UnitTests", "SqliteExtensions.UnitTests\SqliteExtensions.UnitTests.csproj", "{B9E2D9BC-2D42-4C46-ACDB-D87DCA007E9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueryFactory", "QueryFactory\QueryFactory.csproj", "{E63D7CCB-817B-4E4E-BDF6-F82FE0C23224}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CAABDF63-B61A-4FCE-86AC-D43AA862AD42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAABDF63-B61A-4FCE-86AC-D43AA862AD42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAABDF63-B61A-4FCE-86AC-D43AA862AD42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAABDF63-B61A-4FCE-86AC-D43AA862AD42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9E2D9BC-2D42-4C46-ACDB-D87DCA007E9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9E2D9BC-2D42-4C46-ACDB-D87DCA007E9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9E2D9BC-2D42-4C46-ACDB-D87DCA007E9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9E2D9BC-2D42-4C46-ACDB-D87DCA007E9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E63D7CCB-817B-4E4E-BDF6-F82FE0C23224}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E63D7CCB-817B-4E4E-BDF6-F82FE0C23224}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E63D7CCB-817B-4E4E-BDF6-F82FE0C23224}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E63D7CCB-817B-4E4E-BDF6-F82FE0C23224}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

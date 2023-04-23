@@ -1,0 +1,192 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Solutions\\SqliteExtensions_Git\\SqliteExtensions.UnitTests\\SqliteExtensions.UnitTests.csproj": {}
+  },
+  "projects": {
+    "C:\\Solutions\\SqliteExtensions_Git\\ConnectionFactory\\ConnectionFactory.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Solutions\\SqliteExtensions_Git\\ConnectionFactory\\ConnectionFactory.csproj",
+        "projectName": "ConnectionFactory",
+        "projectPath": "C:\\Solutions\\SqliteExtensions_Git\\ConnectionFactory\\ConnectionFactory.csproj",
+        "packagesPath": "C:\\Users\\nicoa\\.nuget\\packages\\",
+        "outputPath": "C:\\Solutions\\SqliteExtensions_Git\\ConnectionFactory\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\nicoa\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Solutions\\SqliteExtensions_Git\\QueryFactory\\QueryFactory.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Solutions\\SqliteExtensions_Git\\QueryFactory\\QueryFactory.csproj",
+        "projectName": "QueryFactory",
+        "projectPath": "C:\\Solutions\\SqliteExtensions_Git\\QueryFactory\\QueryFactory.csproj",
+        "packagesPath": "C:\\Users\\nicoa\\.nuget\\packages\\",
+        "outputPath": "C:\\Solutions\\SqliteExtensions_Git\\QueryFactory\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\nicoa\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Solutions\\SqliteExtensions_Git\\SqliteExtensions.UnitTests\\SqliteExtensions.UnitTests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Solutions\\SqliteExtensions_Git\\SqliteExtensions.UnitTests\\SqliteExtensions.UnitTests.csproj",
+        "projectName": "SqliteExtensions.UnitTests",
+        "projectPath": "C:\\Solutions\\SqliteExtensions_Git\\SqliteExtensions.UnitTests\\SqliteExtensions.UnitTests.csproj",
+        "packagesPath": "C:\\Users\\nicoa\\.nuget\\packages\\",
+        "outputPath": "C:\\Solutions\\SqliteExtensions_Git\\SqliteExtensions.UnitTests\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\nicoa\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Solutions\\SqliteExtensions_Git\\ConnectionFactory\\ConnectionFactory.csproj": {
+                "projectPath": "C:\\Solutions\\SqliteExtensions_Git\\ConnectionFactory\\ConnectionFactory.csproj"
+              },
+              "C:\\Solutions\\SqliteExtensions_Git\\QueryFactory\\QueryFactory.csproj": {
+                "projectPath": "C:\\Solutions\\SqliteExtensions_Git\\QueryFactory\\QueryFactory.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "MSTest.TestAdapter": {
+              "target": "Package",
+              "version": "[2.2.10, )"
+            },
+            "MSTest.TestFramework": {
+              "target": "Package",
+              "version": "[2.2.10, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.5.0, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[3.2.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
