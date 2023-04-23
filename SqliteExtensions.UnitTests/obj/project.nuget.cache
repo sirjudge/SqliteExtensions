@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "7AFWYoOXXjHqV+1WxJe/UQdeE/SD1t456we2gnwHHghu0x2WQuBumL3IS6IjGKLYwrDwXeszf6nPLCu8erWNgQ==",
+  "dgSpecHash": "+VjA0xWnDhKramTFD0YRRlQOVR1PdmkYxJY/vkygMAShQMzZEh/NrbR9LJW0nJfeeeEnQR5jDts74MeMewW7wA==",
   "success": true,
   "projectFilePath": "C:\\Solutions\\SqliteExtensions_Git\\SqliteExtensions.UnitTests\\SqliteExtensions.UnitTests.csproj",
   "expectedPackageFiles": [
@@ -16,6 +16,7 @@
     "C:\\Users\\nicoa\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\nicoa\\.nuget\\packages\\nuget.frameworks\\5.11.0\\nuget.frameworks.5.11.0.nupkg.sha512",
     "C:\\Users\\nicoa\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
+    "C:\\Users\\nicoa\\.nuget\\packages\\sqlite\\3.13.0\\sqlite.3.13.0.nupkg.sha512",
     "C:\\Users\\nicoa\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\nicoa\\.nuget\\packages\\system.diagnostics.debug\\4.3.0\\system.diagnostics.debug.4.3.0.nupkg.sha512",
     "C:\\Users\\nicoa\\.nuget\\packages\\system.diagnostics.textwritertracelistener\\4.3.0\\system.diagnostics.textwritertracelistener.4.3.0.nupkg.sha512",
