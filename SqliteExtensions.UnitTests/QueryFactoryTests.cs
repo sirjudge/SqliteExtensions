@@ -68,4 +68,12 @@ public class QueryFactoryTests
         Assert.IsTrue(testObjectTable.Rows.Count == 2, $"Expected two rows but found {testObjectTable.Rows.Count} instead");
         Assert.IsTrue(testObjectTable.TableName == tableName, $"Expected table name of {tableName} but found {testObjectTable.TableName} instead");
     }
+
+    [TestMethod]
+    public void TestCreateTableCommand()
+    {
+        var factory = new QueryFactory();
+        var createStatement = factory.ObjectToCreateTableString<TestObject>();
+        Assert.IsTrue(!string.IsNullOrEmpty(createStatement), "create query was empty when it should not be");
+    }
 }

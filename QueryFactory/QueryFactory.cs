@@ -35,11 +35,30 @@ public class QueryFactory
         //put a breakpoint here and check datatable
         return dataTable;
     }
+
+
+    public string ObjectToCreateTableString<T>(string tableNameOverride = null)
+    {
+        var tableName = string.IsNullOrEmpty(tableNameOverride) ? typeof(T).Name : tableNameOverride;
+        var queryStringBuilder = new StringBuilder($"CREATE TABLE IF NOT EXISTS\"{tableName}\" (");
+        PropertyInfo[] Props = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance);
+        foreach (PropertyInfo prop in Props)
+        {
+            //Defining type of data column gives proper data table 
+            var type = (prop.PropertyType.IsGenericType && prop.PropertyType.GetGenericTypeDefinition() == typeof(Nullable<>) ? Nullable.GetUnderlyingType(prop.PropertyType) : prop.PropertyType);
+            //Setting column names as Property names
+            // dataTable.Columns.Add(prop.Name, type);
+            queryStringBuilder.Append($" {prop.Name} ");
+        }
+        
+        return queryStringBuilder.Append(")").ToString();
+    }
+    
     
     
     public void InsertData(DataTable table)
     {
         //build insert command
-        var insertQueryStringBuilder = new StringBuilder();
+        
     }
 }
