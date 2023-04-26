@@ -23,7 +23,6 @@ public class ConnectionFactoryTests
     [TestMethod]
     public void CreateDbAndCreateConnection()
     {
-        
         ConnectionFactory.ConnectionFactory.CreateSqliteInstance("CreateConnectionTest.sqlite");
 
         var connectionOptions = new ConnectionOptions()
@@ -31,19 +30,26 @@ public class ConnectionFactoryTests
             DataSource = "CreateConnectionTest.sqlite",
             SqliteOpenMode = SqliteOpenMode.ReadWriteCreate
         };
-        var connection = ConnectionFactory.ConnectionFactory.CreateConnection(connectionOptions);
-        Assert.IsNotNull(connection);
 
-        try
+        using (var connection = ConnectionFactory.ConnectionFactory.CreateConnection(connectionOptions))
         {
-            connection.Open();
-            connection.Close();
-        }
-        catch (Exception e)
-        {
-            Assert.Fail($"Could not open database:{e.Message}");
-        }
-        ConnectionFactory.ConnectionFactory.DeleteSqliteInstance("CreateConnectionTest.sqlite");
+            Assert.IsNotNull(connection);
 
+            try
+            {
+                connection.Open();
+                connection.Close();
+                connection.Dispose();
+            }
+            catch (Exception e)
+            {
+                Assert.Fail($"Could not open database:{e.Message}");
+            }
+            
+            // gc collection is required to fully release sqlite file
+            GC.Collect();
+            ConnectionFactory.ConnectionFactory.DeleteSqliteInstance("CreateConnectionTest.sqlite");
+
+        }
     }
 }
