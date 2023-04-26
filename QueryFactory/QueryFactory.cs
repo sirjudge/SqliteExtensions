@@ -1,19 +1,39 @@
 ﻿using System.ComponentModel;
 using System.Data;
+using System.Reflection;
 using System.Text;
 
 namespace Sqlite;
 
 public class QueryFactory
 {
-    private DataTable ObjectToDataTable(object obj, string tableName)
+    public DataTable ToDataTable<T>(List<T> items, string tableName)
     {
-        // PropertyDescriptorCollection props = TypeDescriptor.GetProperties(typeof(Employee_Master_Model));
-        // DataTable dt = new DataTable();
-        // foreach (PropertyDescriptor p in props)
-        //     dt.Columns.Add(p.Name, p.PropertyType);
+        DataTable dataTable = new DataTable(typeof(T).Name);
 
-        return new DataTable();
+        //Get all the properties
+        PropertyInfo[] Props = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance);
+        foreach (PropertyInfo prop in Props)
+        {
+            //Defining type of data column gives proper data table 
+            var type = (prop.PropertyType.IsGenericType && prop.PropertyType.GetGenericTypeDefinition() == typeof(Nullable<>) ? Nullable.GetUnderlyingType(prop.PropertyType) : prop.PropertyType);
+            //Setting column names as Property names
+            dataTable.Columns.Add(prop.Name, type);
+        }
+        foreach (var item in items)
+        {
+            var values = new object[Props.Length];
+            for (var i = 0; i < Props.Length; i++)
+            {
+                //inserting property values to datatable rows
+                values[i] = Props[i].GetValue(item, null);
+            }
+            dataTable.Rows.Add(values);
+        }
+
+        dataTable.TableName = tableName;
+        //put a breakpoint here and check datatable
+        return dataTable;
     }
     
     
