@@ -1,7 +1,8 @@
-﻿using System.ComponentModel;
-using System.Data;
+﻿using System.Data;
 using System.Reflection;
 using System.Text;
+using Microsoft.Data.Sqlite;
+
 
 namespace Sqlite;
 
@@ -41,6 +42,8 @@ public class QueryFactory
     {
         var tableName = string.IsNullOrEmpty(tableNameOverride) ? typeof(T).Name : tableNameOverride;
         var queryStringBuilder = new StringBuilder($"CREATE TABLE IF NOT EXISTS\"{tableName}\" (");
+        
+        //TODO: Do we want to exclude certain flags? these bindings only parse public and instance properties
         PropertyInfo[] Props = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance);
         foreach (PropertyInfo prop in Props)
         {
@@ -58,7 +61,29 @@ public class QueryFactory
     
     public void InsertData(DataTable table)
     {
-        //build insert command
+        using (var connection = new SqliteConnection(""))
+        {
+            //build insert command
+            using (var transaction = connection.BeginTransaction())
+            {
+                var command = connection.CreateCommand();
+                command.CommandText = @"INSERT INTO data VALUES ($value)";
+
+                var parameter = command.CreateParameter();
+                parameter.ParameterName = "$value";
+                command.Parameters.Add(parameter);
+
+                // Insert a lot of data
+                var random = new Random();
+                for (var i = 0; i < 150_000; i++)
+                {
+                    parameter.Value = random.Next();
+                    command.ExecuteNonQuery();
+                }
+
+                transaction.Commit();
+            }
+        }
         
     }
 }
