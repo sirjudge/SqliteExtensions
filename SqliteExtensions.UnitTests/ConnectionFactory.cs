@@ -40,16 +40,15 @@ public class ConnectionFactoryTests
                 connection.Open();
                 connection.Close();
                 connection.Dispose();
+                SqliteConnection.ClearAllPools();
             }
             catch (Exception e)
             {
                 Assert.Fail($"Could not open database:{e.Message}");
             }
-            
-            // gc collection is required to fully release sqlite file
-            GC.Collect();
-            ConnectionFactory.ConnectionFactory.DeleteSqliteInstance("CreateConnectionTest.sqlite");
-
         }
+        // gc collection is required to fully release sqlite file
+        GC.Collect();
+        ConnectionFactory.ConnectionFactory.DeleteSqliteInstance("CreateConnectionTest.sqlite");
     }
 }
